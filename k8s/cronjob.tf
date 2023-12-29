@@ -19,7 +19,7 @@ resource "kubernetes_cron_job_v1" "prometheus2csv" {
             container {
               name    = "prometheus2csv"
               image   = "fnzv/p2c"
-              command = ["./p2c"] 
+              command = ["/usr/local/bin/p2c"] 
               env {
                   name = "P2C_ADDRESS"
                   value = "http://prometheus.ingress"
